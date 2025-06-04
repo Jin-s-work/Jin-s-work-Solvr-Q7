@@ -6,7 +6,7 @@ import UserDetailPage from './routes/UserDetailPage'
 import CreateUserPage from './routes/CreateUserPage'
 import EditUserPage from './routes/EditUserPage'
 import NotFoundPage from './routes/NotFoundPage'
-import Dashboard from './pages/Dashboard';
+import Dashboard from './pages/Dashboard'
 
 function App() {
   return (

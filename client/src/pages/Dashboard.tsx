@@ -1,6 +1,8 @@
-// client/src/pages/Dashboard.tsx
 import { useEffect, useState } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import {
+  LineChart, Line, XAxis, YAxis,
+  CartesianGrid, Tooltip, Legend
+} from 'recharts';
 
 interface Stat {
   repo: string;
@@ -12,27 +14,13 @@ export default function Dashboard() {
   const [data, setData] = useState<Stat[]>([]);
 
   useEffect(() => {
-    fetch('/release_stats.csv')
-      .then(res => res.text())
-      .then(text => {
-        const lines = text.trim().split('\n');
-        const [header, ...rows] = lines;
-        const headers = header.split(',');
-
-        const parsed = rows.map(row => {
-          const values = row.split(',');
-          const obj: any = {};
-          headers.forEach((h, i) => {
-            obj[h] = values[i];
-          });
-          return {
-            repo: obj.repo,
-            date: obj.date,
-            release_count: Number(obj.release_count),
-          };
-        });
-
-        setData(parsed);
+    fetch('/api/stats')
+      .then(res => res.json())
+      .then((json: Stat[]) => {
+        setData(json);
+      })
+      .catch(error => {
+        console.error('Failed to fetch stats:', error);
       });
   }, []);
 

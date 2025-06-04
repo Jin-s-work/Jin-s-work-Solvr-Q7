@@ -103,3 +103,9 @@ pnpm build
 - React
 - Recharts
 - Vite
+
+### 클라이언트와 서버 코드 분리 및 대시보드 연동 완료
+
+- 서버는 `release_stats.csv`를 메모리에 로드하여 API(`/api/stats`)를 통해 클라이언트에 제공
+- 클라이언트는 API 데이터를 수신해 라인 차트로 시각화
+- Vite 프록시 설정을 통해 포트 간 API 연동 처리 완료
