@@ -83,3 +83,23 @@ pnpm build
 - `POST /api/users`: 새 유저 추가
 - `PUT /api/users/:id`: 유저 정보 수정
 - `DELETE /api/users/:id`: 유저 삭제
+
+
+## 📊 Dashboard: Release Stats Visualization
+
+`/client/src/pages/Dashboard.tsx`에는 GitHub 릴리즈 데이터를 기반으로 한 대시보드가 구현되어 있습니다.
+
+### 기능
+- `release_stats.csv` 파일을 기반으로 날짜별 릴리즈 수를 시각화
+- 리포지토리(repo)별 릴리즈 트렌드 분석 가능
+- LineChart 기반 시각화 (Recharts 활용)
+- 추후 BarChart, PieChart 등 다양한 시각화 컴포넌트로 확장 가능
+
+### 경로
+- `/dashboard` 경로로 접근하여 확인할 수 있습니다.
+
+### 사용 기술
+- TypeScript
+- React
+- Recharts
+- Vite
