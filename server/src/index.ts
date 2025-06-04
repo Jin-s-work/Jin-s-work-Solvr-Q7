@@ -4,8 +4,8 @@ import env from './config/env'
 import { initializeDatabase, getDb } from './db'
 import runMigration from './db/migrate'
 import { createUserService } from './services/userService'
-import { createRoutes } from './routes'
 import { AppContext } from './types/context'
+import { createRoutes } from './routes'
 
 // Fastify 인스턴스 생성
 const fastify = Fastify({
@@ -20,6 +20,7 @@ const fastify = Fastify({
     }
   }
 })
+
 
 // 서버 시작 함수
 async function start() {

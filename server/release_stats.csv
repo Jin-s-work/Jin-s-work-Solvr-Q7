@@ -1,0 +1,17 @@
+repo,date,year,month,week,day_of_week,release_count
+stackflow,2025-05-29,2025,5,22,Thursday,2
+stackflow,2025-05-15,2025,5,20,Thursday,2
+stackflow,2025-05-12,2025,5,20,Monday,1
+stackflow,2025-04-09,2025,4,15,Wednesday,2
+stackflow,2025-03-27,2025,3,13,Thursday,2
+stackflow,2025-03-14,2025,3,11,Friday,2
+stackflow,2025-02-24,2025,2,9,Monday,1
+stackflow,2025-02-14,2025,2,7,Friday,3
+stackflow,2025-01-22,2025,1,4,Wednesday,5
+stackflow,2024-12-18,2024,12,51,Wednesday,4
+stackflow,2024-11-19,2024,11,47,Tuesday,1
+stackflow,2024-11-08,2024,11,45,Friday,1
+stackflow,2024-10-23,2024,10,43,Wednesday,1
+stackflow,2024-09-26,2024,9,39,Thursday,3
+seed-design,2025-06-02,2025,6,23,Monday,10
+seed-design,2025-05-30,2025,5,22,Friday,20
