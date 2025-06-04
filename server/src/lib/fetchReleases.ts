@@ -37,19 +37,25 @@ export async function fetchAndSaveReleaseStats(): Promise<void> {
       counter[key] = (counter[key] || 0) + 1;
     });
 
+    // 주말 제외하고 통계 생성
     Object.entries(counter).forEach(([date, count]) => {
-      const d = parseISO(date);
-      stats.push({
-        repo: repo.name,
-        date,
-        year: getYear(d),
-        month: d.getMonth() + 1,
-        week: getWeek(d),
-        day_of_week: format(d, 'EEEE'),
-        release_count: count,
+        const d = parseISO(date);
+        const dayOfWeek = format(d, 'EEEE');
+  
+        // ✅ 주말 제외: Saturday, Sunday
+        if (dayOfWeek === 'Saturday' || dayOfWeek === 'Sunday') return;
+  
+        stats.push({
+          repo: repo.name,
+          date,
+          year: getYear(d),
+          month: d.getMonth() + 1,
+          week: getWeek(d),
+          day_of_week: dayOfWeek,
+          release_count: count,
+        });
       });
-    });
-  }
+    }
 
   // ✅ CSV 파일 저장 경로 설정 (루트 기준 절대경로)
   const outputPath = path.resolve(__dirname, '../../release_stats.csv');
